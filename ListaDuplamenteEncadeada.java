@@ -23,11 +23,9 @@ public class ListaDuplamenteEncadeada {
         System.out.println("Adicionando elementos na lista.");
         No novoNo = new No(elemento);
         if (origem == null) {
-            // Estou adicionando o primeiro nó na lista
             origem = novoNo;
             fim = novoNo;
         } else {
-            // Já possui nó na lista
             fim.setProximo(novoNo);
             novoNo.setAnterior(fim);
             fim = novoNo;
@@ -156,5 +154,60 @@ public class ListaDuplamenteEncadeada {
         } else {
             System.out.println("Informe uma posição válida.");
         }
+    }
+
+    public Integer maiorElemento() {
+        if (origem == null) {
+            return null;
+        }
+        No aux = origem;
+        Integer maior = aux.getElemento();
+        while (aux != null) {
+            if (aux.getElemento() > maior) {
+                maior = aux.getElemento();
+            }
+            aux = aux.getProximo();
+        }
+        return maior;
+    }
+
+    public Integer menorElemento() {
+        if (origem == null) {
+            return null;
+        }
+        No aux = origem;
+        Integer menor = aux.getElemento();
+        while (aux != null) {
+            if (aux.getElemento() < menor) {
+                menor = aux.getElemento();
+            }
+            aux = aux.getProximo();
+        }
+        return menor;
+    }
+
+    public Double mediaElementos() {
+        if (origem == null) {
+            return null;
+        }
+        No aux = origem;
+        int soma = 0;
+        int count = 0;
+        while (aux != null) {
+            soma += aux.getElemento();
+            count++;
+            aux = aux.getProximo();
+        }
+        return count > 0 ? (double) soma / count : null;
+    }
+
+    public int quantidadeElementos() {
+        No aux = origem;
+        int count = 0;
+        while (aux != null) {
+            count++;
+            aux = aux.getProximo();
+        }
+        return count;
     }
 }
