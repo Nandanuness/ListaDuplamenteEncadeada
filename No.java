@@ -7,6 +7,7 @@ public class No {
         this.proximo = null;
         this.anterior = null;
         this.elemento = elemento;
+        // cada nó tem 3 atributos: referência ao próximo, ao anterior e um valor (elemento)
     }
 
     public No getProximo() {
