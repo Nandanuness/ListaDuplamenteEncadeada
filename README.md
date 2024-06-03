@@ -15,3 +15,4 @@ Alunos: Fernanda Nunes e Danilo Barbieri
 - Menor
 - Média
 - Quantidade
+- Buscar (elemento em qual ou quais posições ele está presente, ou indica se este elemento não existir na lista)
