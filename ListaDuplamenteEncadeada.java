@@ -14,23 +14,20 @@ public class ListaDuplamenteEncadeada {
             No aux = origem;
             while (aux != null) {
                 System.out.println(aux.getElemento());
-                aux = aux.getProximo();
-                // o loop while continua até que o aux seja nulo, e percorre todos os nós na lista.
+                aux = aux.getProximo(); //o loop continua até o aux = null, e percorre todos os nós na lista.
             }
         }
     }
 
     public void adicionarFim(Integer elemento) {
         No novoNo = new No(elemento);
-        if (origem == null) {
+        if (origem == null) { // ou seja, ainda não tem nenhum elemento na lista
             origem = novoNo;
-            fim = novoNo;
-            // por estar iniciando o primeiro nó na lista, ele será o início e o fim
+            fim = novoNo; //inserindo o primeiro nó na lista, ele será o início e o fim
         } else {
-            fim.setProximo(novoNo);
-            novoNo.setAnterior(fim);
-            fim = novoNo;
-            // com referência no nó fim, adiciona um próximo nó que também assumirá a posição de nó fim
+            fim.setProximo(novoNo); //adiciona um próximo do nó fim, um novo nó
+            novoNo.setAnterior(fim); //referencia o anterior do novo nó como o atual fim
+            fim = novoNo; //atualiza o fim
         }
     }
 
@@ -61,7 +58,7 @@ public class ListaDuplamenteEncadeada {
                 // adiciona um novo nó origem
             }
             while (atual != null && cont < posicao) {
-            //percorre a lista até que atual receba nulo (o que infica o fim da lista) ou que cont alcance
+                //percorre a lista até que atual receba nulo (o que infica o fim da lista) ou que cont alcance
                 // a posição desejada
                 atual = atual.getProximo();
                 // atualiza o atual para o proximo nó na lista
@@ -176,7 +173,7 @@ public class ListaDuplamenteEncadeada {
             while (atual != null && cont < posicao) {
                 atual = atual.getProximo();
                 cont++;
-            //percorre a lista até alcançar a posição atual desejada ou até o final da lista
+                //percorre a lista até alcançar a posição atual desejada ou até o final da lista
             }
             if (atual != null) {
                 //verifica se o nó da posição atual existe (não é nulo)
@@ -270,5 +267,26 @@ public class ListaDuplamenteEncadeada {
         }
         return count;
         // Após o loop terminar o método retorna o valor de count, que contém o número total de elementos na lista
+    }
+
+    public void buscarElemento(Integer elemento) {
+        if (origem == null) {
+            System.out.println("Não existem elementos na lista.");
+            return;  // Retorna imediatamente se a lista estiver vazia
+        }
+        No aux = origem;
+        int posicao = 0;
+        boolean encontrado = false;
+        while (aux != null) { // quando aux == null significa que já percorreu toda a lista
+            if (aux.getElemento().equals(elemento)) {// verifica se o elemento do nó atual é = ao desejado
+                System.out.println("Elemento encontrado na posição: " + posicao);
+                encontrado = true; // indica que o elemento foi encontrado pelo menos uma vez na lista
+            }
+            aux = aux.getProximo();
+            posicao++;
+        }
+        if (!encontrado) { // se depois de percorrer toda a lista, o elemento ainda não foi encontrado
+            System.out.println("Elemento não encontrado na lista.");
+        }
     }
 }

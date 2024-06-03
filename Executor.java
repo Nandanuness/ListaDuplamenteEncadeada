@@ -10,26 +10,31 @@ public class Executor {
         lista.adicionarFim(6);
         lista.exibirElementos();
 
-        // Teste dos métodos de remoção
-        lista.removerElemento(3);
-        lista.exibirElementos();
-        lista.removerInicio();
-        lista.exibirElementos();
-        lista.removerFim();
-        lista.exibirElementos();
-        lista.removerPosicao(2);
-        lista.exibirElementos();
+//        // Teste dos métodos de remoção
+//        lista.removerElemento(3);
+//        lista.exibirElementos();
+//        lista.removerInicio();
+//        lista.exibirElementos();
+//        lista.removerFim();
+//        lista.exibirElementos();
+//        lista.removerPosicao(2);
+//        lista.exibirElementos();
+//
+//        // Testando o método buscarElemento
+//        System.out.println("Buscando o elemento 6:");
+//        lista.buscarElemento(6);
+//
+//        // Exibindo o maior elemento
+//        System.out.println("Maior elemento: " + lista.maiorElemento());
+//
+//        // Exibindo o menor elemento
+//        System.out.println("Menor elemento: " + lista.menorElemento());
+//
+//        // Exibindo a média dos elementos
+//        System.out.println("Média dos elementos: " + lista.mediaElementos());
+//
+//        // Exibindo a quantidade de elementos
+//        System.out.println("Quantidade de elementos: " + lista.quantidadeElementos());
 
-        // Exibindo o maior elemento
-        System.out.println("Maior elemento: " + lista.maiorElemento());
-
-        // Exibindo o menor elemento
-        System.out.println("Menor elemento: " + lista.menorElemento());
-
-        // Exibindo a média dos elementos
-        System.out.println("Média dos elementos: " + lista.mediaElementos());
-
-        // Exibindo a quantidade de elementos
-        System.out.println("Quantidade de elementos: " + lista.quantidadeElementos());
     }
 }
